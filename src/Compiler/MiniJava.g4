@@ -2,9 +2,6 @@
 
 grammar MiniJava;
 
-@header {
-}
-
 goal
     :   mainClassDeclaration
         classDeclaration*
@@ -47,17 +44,7 @@ varDeclaration
     ;
 
 methodDeclaration
-    :   ( 'public' type ID formalParameters
-        /* illegal method declarations */
-        |          type ID formalParameters
-            {notifyErrorListeners("method declaration without public");}
-        | 'public'      ID formalParameters
-            {notifyErrorListeners("method declaration without return type");}
-        | 'public' type    formalParameters
-            {notifyErrorListeners("method declaration without method name");}
-        | 'public' type ID
-            {notifyErrorListeners("method declaration without argument list");}
-        )
+    :   'public' type ID formalParameters
         methodBody
     ;
 
@@ -108,6 +95,8 @@ statement
     # returnStatement
     |   'recur' expression '?' methodArgumentList ':' expression ';'
     # recurStatement
+    | expression ';'
+    # expressionStatement
     ;
 
 expression
@@ -144,7 +133,9 @@ expression
     |   'this'
     # thisExpression
     |   '(' expression ')'
-    # parenExpression
+    # parentExpression
+    | 'System.randomInt(' expression ')'
+    # randomIntExpression
     ;
 
 methodArgumentList

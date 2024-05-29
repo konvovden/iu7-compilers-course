@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/konvovden/Study/10sem/iu7-compilers-course/src/Compiler/MiniJava.g4 by ANTLR 4.13.1
+// Generated from D:/Study/10-sem/iu7-compilers-course/src/Compiler/MiniJava.g4 by ANTLR 4.13.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -18,8 +18,6 @@
 #pragma warning disable 1591
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
-
-
 
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
@@ -275,6 +273,17 @@ public partial class MiniJavaBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <return>The visitor result.</return>
 	public virtual Result VisitRecurStatement([NotNull] MiniJavaParser.RecurStatementContext context) { return VisitChildren(context); }
 	/// <summary>
+	/// Visit a parse tree produced by the <c>expressionStatement</c>
+	/// labeled alternative in <see cref="MiniJavaParser.statement"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitExpressionStatement([NotNull] MiniJavaParser.ExpressionStatementContext context) { return VisitChildren(context); }
+	/// <summary>
 	/// Visit a parse tree produced by the <c>ltExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
 	/// <para>
@@ -352,17 +361,6 @@ public partial class MiniJavaBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <return>The visitor result.</return>
 	public virtual Result VisitBooleanLitExpression([NotNull] MiniJavaParser.BooleanLitExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitParenExpression([NotNull] MiniJavaParser.ParenExpressionContext context) { return VisitChildren(context); }
-	/// <summary>
 	/// Visit a parse tree produced by the <c>intLitExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
 	/// <para>
@@ -373,6 +371,17 @@ public partial class MiniJavaBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	public virtual Result VisitIntLitExpression([NotNull] MiniJavaParser.IntLitExpressionContext context) { return VisitChildren(context); }
+	/// <summary>
+	/// Visit a parse tree produced by the <c>parentExpression</c>
+	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitParentExpression([NotNull] MiniJavaParser.ParentExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>andExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
@@ -395,6 +404,17 @@ public partial class MiniJavaBaseVisitor<Result> : AbstractParseTreeVisitor<Resu
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	public virtual Result VisitArrayAccessExpression([NotNull] MiniJavaParser.ArrayAccessExpressionContext context) { return VisitChildren(context); }
+	/// <summary>
+	/// Visit a parse tree produced by the <c>randomIntExpression</c>
+	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitRandomIntExpression([NotNull] MiniJavaParser.RandomIntExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>addExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.

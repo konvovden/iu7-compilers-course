@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /home/konvovden/Study/10sem/iu7-compilers-course/src/Compiler/MiniJava.g4 by ANTLR 4.13.1
+// Generated from D:/Study/10-sem/iu7-compilers-course/src/Compiler/MiniJava.g4 by ANTLR 4.13.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -18,8 +18,6 @@
 #pragma warning disable 1591
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
-
-
 
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
@@ -180,6 +178,13 @@ public interface IMiniJavaVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitRecurStatement([NotNull] MiniJavaParser.RecurStatementContext context);
 	/// <summary>
+	/// Visit a parse tree produced by the <c>expressionStatement</c>
+	/// labeled alternative in <see cref="MiniJavaParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitExpressionStatement([NotNull] MiniJavaParser.ExpressionStatementContext context);
+	/// <summary>
 	/// Visit a parse tree produced by the <c>ltExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
 	/// </summary>
@@ -229,19 +234,19 @@ public interface IMiniJavaVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitBooleanLitExpression([NotNull] MiniJavaParser.BooleanLitExpressionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitParenExpression([NotNull] MiniJavaParser.ParenExpressionContext context);
-	/// <summary>
 	/// Visit a parse tree produced by the <c>intLitExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitIntLitExpression([NotNull] MiniJavaParser.IntLitExpressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>parentExpression</c>
+	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitParentExpression([NotNull] MiniJavaParser.ParentExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>andExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
@@ -256,6 +261,13 @@ public interface IMiniJavaVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitArrayAccessExpression([NotNull] MiniJavaParser.ArrayAccessExpressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>randomIntExpression</c>
+	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitRandomIntExpression([NotNull] MiniJavaParser.RandomIntExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>addExpression</c>
 	/// labeled alternative in <see cref="MiniJavaParser.expression"/>.

@@ -1,29 +1,25 @@
-﻿using Antlr4.Runtime;
+﻿using System;
+using Antlr4.Runtime;
 using Compiler;
 using Compiler.Visitors;
 
-namespace Startup;
-
-class Program
+namespace Startup
 {
-    static void Main(string[] args)
+    class Program
     {
-        var exampleName = "hello";
+        static void Main(string[] args)
+        {
+            var exampleName = "linkedlist_reverse";
 
-        var input = new AntlrFileStream($"examples/{exampleName}.java");
-        var lexer = new MiniJavaLexer(input);
-        var tokenStream = new CommonTokenStream(lexer);
-        var parser = new MiniJavaParser(tokenStream);
+            Console.WriteLine(new Random().Next(10));
+            Console.WriteLine(new Random().Next(10));
+            
+            var miniJavaCompiler = new MiniJavaCompiler();
+            miniJavaCompiler.Compile($"examples/{exampleName}.java", exampleName, $"output/{exampleName}.exe");
 
-        var goalContext = parser.goal();
-
-        var visitor = new CustomVisitor();
-        visitor.Visit(goalContext);
-
-        var codeGenVisitor = new CodeGenVisitor("test");
-        codeGenVisitor.Visit(goalContext);
-
-        
-        Console.WriteLine("END");
+            AppDomain.CurrentDomain.ExecuteAssembly($"output/{exampleName}.exe");
+            
+            Console.WriteLine("END");
+        }
     }
 }
