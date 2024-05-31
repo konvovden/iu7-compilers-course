@@ -21,11 +21,11 @@ namespace Compiler
             {
                 OutputPath = outputFile
             });
+    
+            var classesDeclarationsVisitor = new ClassDeclarationsVisitor(assemblyGenerator);
+            classesDeclarationsVisitor.Visit(parser.goal());
 
-            var classesDeclarations = new ClassDeclarationsVisitor(assemblyGenerator);
-            classesDeclarations.Visit(parser.goal());
-
-            var classes = classesDeclarations.Classes;
+            var classes = classesDeclarationsVisitor.Classes;
 
             var classesMethodsDeclarationsVisitor = new ClassesMethodsDeclarationsVisitor(assemblyGenerator, classes);
             parser.Reset();

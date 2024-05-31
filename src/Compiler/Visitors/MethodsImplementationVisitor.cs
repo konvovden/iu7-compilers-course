@@ -110,7 +110,7 @@ namespace Compiler.Visitors
             var fieldName = context.ID().Symbol.Text;
             var fieldType = GetTypeFromContext(context.type());
 
-            _currentClassFields[fieldName] = currentClass.Field(fieldType, fieldName);
+            _currentClassFields[fieldName] = currentClass.Protected.Field(fieldType, fieldName);
             
             return true;
         }
@@ -428,7 +428,7 @@ namespace Compiler.Visitors
             else
             {
                 var newRandomOperand = _assemblyGen.ExpressionFactory.New(typeof(Random));
-                randomOperand = _classes[_currentClassName].Field(typeof(Random), RANDOM_FIELD_NAME, newRandomOperand);
+                randomOperand = _classes[_currentClassName].Protected.Field(typeof(Random), RANDOM_FIELD_NAME, newRandomOperand);
 
                 _currentClassFields[RANDOM_FIELD_NAME] = randomOperand;
             }
@@ -465,8 +465,7 @@ namespace Compiler.Visitors
             {
                 result = _currentCodeGen.Arg(name);
             }
-            else if (_currentClassFields.TryGetValue(name, out var classField))
-                result = classField;
+            else result = _currentCodeGen.This().Field(name);
             
 
             return result;

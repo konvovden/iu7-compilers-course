@@ -12,7 +12,7 @@ namespace Startup
         static void Main(string[] args)
         {
             RunAllTests();
-            //RunTest("inheritance");
+            //RunTest("_inheritance");
         }
 
         private static void RunTest(string exampleName, bool executeAssembly = true)
