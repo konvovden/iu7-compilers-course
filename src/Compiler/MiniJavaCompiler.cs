@@ -13,9 +13,9 @@ namespace Compiler
             var tokenStream = new CommonTokenStream(lexer);
             var parser = new MiniJavaParser(tokenStream);
 
-            var printNodesVisitor = new PrintNodesVisitor();
+            /*var printNodesVisitor = new PrintNodesVisitor();
             printNodesVisitor.Visit(parser.goal());
-            parser.Reset();
+            parser.Reset();*/
             
             var assemblyGenerator = new AssemblyGen(assemblyName, new CompilerOptions()
             {
