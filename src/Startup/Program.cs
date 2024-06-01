@@ -36,7 +36,8 @@ namespace Startup
         {
             var examples = Directory.EnumerateFiles("examples/", "*.java")
                 .Select(f => f.Replace("examples/", ""))
-                .Select(f => f.Replace(".java", ""));
+                .Select(f => f.Replace(".java", ""))
+                .OrderBy(f => f);
 
             foreach (var example in examples)
                 RunTest(example, executeAssembly);

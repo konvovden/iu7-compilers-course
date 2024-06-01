@@ -93,8 +93,6 @@ statement
     # arrayAssignStatement
     |   'return' expression ';'
     # returnStatement
-    |   'recur' expression '?' methodArgumentList ':' expression ';'
-    # recurStatement
     | expression ';'
     # expressionStatement
     ;
