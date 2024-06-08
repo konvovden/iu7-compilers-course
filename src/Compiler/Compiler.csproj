@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.1" />
+      <PackageReference Include="aqla.runsharp" Version="1.0.23" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Antlr\" />
+    </ItemGroup>
+
+</Project>
